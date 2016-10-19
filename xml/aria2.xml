@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2016-10-19</Date>
+  <Beta>False</Beta>
+  <Category>Downloaders</Category>
+  <Name>webui-aria2</Name>
+  <Project>https://goo.gl/Ymgu2G</Project>
+  <Changes>
+    - Initial release as a Docker template.
+  </Changes>
+  <Overview>
+    The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just open the hosted static HTML5/JS files in any web browser.
+  </Overview>
+  <Description>
+    Aria2 is a full featured downloading utility, capable of splitting individual HTTP/S downloads into multiple segments, or even downloading and seeding Torrents. The included WebUI is downloaded as static files from the bundled simple web browser, and runs entirely in the client web browser. It need only access port 6800 on the same server as the documents.
+    [b][span style='color: #E80000;']Directions:[/span][/b][br]
+    [b]/config[/b] : This is where aria2 will store its persistent configuration.[br]
+    [b]/data[/b] : This is where your downloads will go.[br]
+    [b]RPC Port[/b] : This is where aria2c will listen for RPC connections. Do not remap unless you know what you're doing.[br]
+    [b]Web Port[/b] : This is where the busybox web server will be hosting the static web interface files. Map anywhere convenient.[br][br]
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/kode54/webui-aria2/</Registry>
+  <GitHub>https://github.com/kode54/webui-aria2</GitHub>
+  <Repository>kode54/webui-aria2</Repository>
+  <Support></Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9100</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6800</HostPort>
+        <ContainerPort>6800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/aria2 Downloads</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/webui-aria2</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <Banner></Banner>
+  <Icon>https://f.losno.co/net.sf.aria2-w250.png</Icon>
+</Containers>
