@@ -16,8 +16,8 @@
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : This is where aria2 will store its persistent configuration.[br]
     [b]/data[/b] : This is where your downloads will go.[br]
-    [b]RPC Port[/b] : This is where aria2c will listen for RPC connections. Do not remap unless you know what you're doing.[br]
-    [b]Web Port[/b] : This is where the busybox web server will be hosting the static web interface files. Map anywhere convenient.[br][br]
+    [b]Container port 6800[/b] : This is where aria2c will listen for RPC connections. Do not remap unless you know what you're doing.[br]
+    [b]Container port 8080[/b] : This is where the busybox web server will be hosting the static web interface files. Map anywhere convenient.[br][br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/kode54/webui-aria2/</Registry>
   <GitHub>https://github.com/kode54/webui-aria2</GitHub>
